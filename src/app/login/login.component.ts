@@ -6,7 +6,8 @@ import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../../common/services/authentication.service';
 import { AlertService } from '../../common/services/alert.service';
 
-@Component({templateUrl: 'login.component.html'})
+@Component({templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']})
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
