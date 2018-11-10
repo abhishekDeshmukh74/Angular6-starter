@@ -23,6 +23,7 @@ import { JwtInterceptor } from '../common/helpers/jwt-interceptor';
 import { AlertService } from '../common/services/alert.service';
 import { AuthenticationService } from '../common/services/authentication.service';
 import { UserService } from '../common/services/user.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UserService } from '../common/services/user.service';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule
   ],
   providers: [
     AuthGuard,
