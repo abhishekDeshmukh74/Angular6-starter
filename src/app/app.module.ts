@@ -26,31 +26,17 @@ import { UserService } from '../common/services/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    LoginComponent,
-    AlertComponent,
-    HeaderComponent,
-    NotFoundComponent,
-    RegisterComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule
-  ],
-  providers: [
-    AuthGuard,
-    AlertService,
-    AuthenticationService,
-    UserService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    fakeBackendProvider
-  ],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, FooterComponent, LoginComponent, AlertComponent, HeaderComponent, NotFoundComponent, RegisterComponent],
+	imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes), BrowserAnimationsModule],
+	providers: [
+		AuthGuard,
+		AlertService,
+		AuthenticationService,
+		UserService,
+		{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+		{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+		fakeBackendProvider,
+	],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}
