@@ -5,10 +5,10 @@ import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
-	constructor() {}
+	constructor() { }
 
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-		// array in local storage for registered users
+
 		const users: any[] = JSON.parse(localStorage.getItem('users')) || [];
 
 		// wrap in delayed observable to simulate server api call

@@ -24,9 +24,10 @@ import { AlertService } from '../common/services/alert.service';
 import { AuthenticationService } from '../common/services/authentication.service';
 import { UserService } from '../common/services/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
-	declarations: [AppComponent, FooterComponent, LoginComponent, AlertComponent, HeaderComponent, NotFoundComponent, RegisterComponent],
+	declarations: [AppComponent, FooterComponent, LoginComponent, AlertComponent, HeaderComponent, NotFoundComponent, RegisterComponent, ContactsComponent],
 	imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes), BrowserAnimationsModule],
 	providers: [
 		AuthGuard,
