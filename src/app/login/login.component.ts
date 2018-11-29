@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
 			.pipe(first())
 			.subscribe(
 				data => {
-					this.router.navigate(['/contacts']);
+					this.router.navigate(['/paginate']);
 				},
 				error => {
 					this.alertService.error(error);

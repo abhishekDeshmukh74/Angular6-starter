@@ -24,10 +24,10 @@ import { AlertService } from '../common/services/alert.service';
 import { AuthenticationService } from '../common/services/authentication.service';
 import { UserService } from '../common/services/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ContactsComponent } from './contacts/contacts.component';
+import { PaginateModule } from './paginate/paginate.module';
 
 @NgModule({
-	declarations: [AppComponent, FooterComponent, LoginComponent, AlertComponent, HeaderComponent, NotFoundComponent, RegisterComponent, ContactsComponent],
+	declarations: [AppComponent, FooterComponent, LoginComponent, AlertComponent, HeaderComponent, NotFoundComponent, RegisterComponent],
 	imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes), BrowserAnimationsModule],
 	providers: [
 		AuthGuard,
@@ -40,4 +40,4 @@ import { ContactsComponent } from './contacts/contacts.component';
 	],
 	bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,4 +1,4 @@
-export interface IContacts {
+export interface IPaginate {
     name: number;
     nicknamename: string;
     city: string;
