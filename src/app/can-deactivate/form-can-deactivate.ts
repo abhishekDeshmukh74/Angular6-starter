@@ -4,7 +4,7 @@ import { FormGroup } from '@angular/forms';
 export class FormCanDeactivate extends ComponentCanDeactivate {
 
 	// get form(): FormGroup;
-	loginForm
+	loginForm;
 
 	canDeactivate(): boolean {
 		// return this.form.touched || !this.form.dirty;

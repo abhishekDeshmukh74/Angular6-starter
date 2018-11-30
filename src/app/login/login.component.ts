@@ -20,7 +20,7 @@ export class LoginComponent extends FormCanDeactivate implements OnInit {
 		private router: Router,
 		private authenticationService: AuthenticationService,
 		private alertService: AlertService
-	) { super() }
+	) { super(); }
 
 	ngOnInit() {
 		this.loginForm = this.formBuilder.group({
