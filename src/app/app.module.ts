@@ -24,7 +24,8 @@ import { AlertService } from '../common/services/alert.service';
 import { AuthenticationService } from '../common/services/authentication.service';
 import { UserService } from '../common/services/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PaginateModule } from './paginate/paginate.module';
+import { CanDeactivateGuard } from './can-deactivate/can-deactivate.guard';
+// import { PaginateModule } from './paginate/paginate.module';
 
 @NgModule({
 	declarations: [AppComponent, FooterComponent, LoginComponent, AlertComponent, HeaderComponent, NotFoundComponent, RegisterComponent],
@@ -32,6 +33,7 @@ import { PaginateModule } from './paginate/paginate.module';
 	providers: [
 		AuthGuard,
 		AlertService,
+		CanDeactivateGuard,
 		AuthenticationService,
 		UserService,
 		{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

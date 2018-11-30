@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService } from '../../common/services/alert.service';
 import { UserService } from '../../common/services/user.service';
+import { FormCanDeactivate } from '../can-deactivate/form-can-deactivate';
 
 @Component({ templateUrl: 'register.component.html', styleUrls: ['./register.component.scss'] })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent extends FormCanDeactivate implements OnInit {
+
+	@ViewChild('registerForm')
 	registerForm: FormGroup;
 	loading = false;
 	submitted = false;
@@ -17,7 +20,9 @@ export class RegisterComponent implements OnInit {
 		private router: Router,
 		private userService: UserService,
 		private alertService: AlertService
-	) { }
+	) {
+		super();
+	}
 
 	ngOnInit() {
 		this.registerForm = this.formBuilder.group({

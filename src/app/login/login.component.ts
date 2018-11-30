@@ -5,9 +5,10 @@ import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../common/services/authentication.service';
 import { AlertService } from '../../common/services/alert.service';
+import { FormCanDeactivate } from '../can-deactivate/form-can-deactivate';
 
 @Component({ templateUrl: './login.component.html', styleUrls: ['./login.component.scss'] })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends FormCanDeactivate implements OnInit {
 	loginForm: FormGroup;
 	loading = false;
 	submitted = false;
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
 		private router: Router,
 		private authenticationService: AuthenticationService,
 		private alertService: AlertService
-	) { }
+	) { super() }
 
 	ngOnInit() {
 		this.loginForm = this.formBuilder.group({
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
 		this.authenticationService.logout();
 
 		// get return url from route parameters or default to '/'
-		//this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+		// this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 	}
 
 	// convenience getter for easy access to form fields
