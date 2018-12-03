@@ -5,10 +5,11 @@ import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../common/services/authentication.service';
 import { AlertService } from '../../common/services/alert.service';
-import { FormCanDeactivate } from '../can-deactivate/form-can-deactivate';
+import { FormCanDeactivate } from '../form-can-deactivate/form-can-deactivate';
 
 @Component({ templateUrl: './login.component.html', styleUrls: ['./login.component.scss'] })
 export class LoginComponent extends FormCanDeactivate implements OnInit {
+	form: FormGroup;
 	loginForm: FormGroup;
 	loading = false;
 	submitted = false;
@@ -27,6 +28,8 @@ export class LoginComponent extends FormCanDeactivate implements OnInit {
 			username: ['', Validators.required],
 			password: ['', Validators.required],
 		});
+
+		this.form = this.loginForm;
 
 		// reset login status
 		this.authenticationService.logout();

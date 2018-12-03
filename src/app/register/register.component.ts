@@ -1,3 +1,4 @@
+import { FormCanDeactivate } from '../form-can-deactivate/form-can-deactivate';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
@@ -5,12 +6,13 @@ import { first } from 'rxjs/operators';
 
 import { AlertService } from '../../common/services/alert.service';
 import { UserService } from '../../common/services/user.service';
-import { FormCanDeactivate } from '../can-deactivate/form-can-deactivate';
 
 @Component({ templateUrl: 'register.component.html', styleUrls: ['./register.component.scss'] })
+
 export class RegisterComponent extends FormCanDeactivate implements OnInit {
 
-	@ViewChild('registerForm')
+	@ViewChild('form') form: FormGroup;
+
 	registerForm: FormGroup;
 	loading = false;
 	submitted = false;
@@ -33,6 +35,8 @@ export class RegisterComponent extends FormCanDeactivate implements OnInit {
 			mobileNo: ['', Validators.required],
 			password: ['', [Validators.required, Validators.minLength(6)]],
 		});
+
+		this.form = this.registerForm;
 	}
 
 	get f() {
