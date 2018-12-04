@@ -1,4 +1,4 @@
-import { ComponentCanDeactivate } from '../can-deactivate/component-can-deactivate';
+import { ComponentCanDeactivate } from './component-can-deactivate';
 import { FormGroup } from '@angular/forms';
 
 export abstract class FormCanDeactivate extends ComponentCanDeactivate {

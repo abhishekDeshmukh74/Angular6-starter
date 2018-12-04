@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../common/services/authentication.service';
 import { AlertService } from '../../common/services/alert.service';
-import { FormCanDeactivate } from '../form-can-deactivate/form-can-deactivate';
+import { FormCanDeactivate } from '../can-deactivate/form-can-deactivate';
 
 @Component({ templateUrl: './login.component.html', styleUrls: ['./login.component.scss'] })
 export class LoginComponent extends FormCanDeactivate implements OnInit {
-	form: FormGroup;
+
+	@ViewChild('form') form: FormGroup;
+
 	loginForm: FormGroup;
 	loading = false;
 	submitted = false;

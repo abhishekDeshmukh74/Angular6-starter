@@ -1,4 +1,4 @@
-import { FormCanDeactivate } from '../form-can-deactivate/form-can-deactivate';
+import { FormCanDeactivate } from '../can-deactivate/form-can-deactivate';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
