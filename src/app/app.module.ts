@@ -25,11 +25,19 @@ import { AuthenticationService } from '../common/services/authentication.service
 import { UserService } from '../common/services/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CanDeactivateGuard } from './can-deactivate/can-deactivate.guard';
+import { ImageuploadComponent } from './imageupload/imageupload.component';
+import { MatInputModule, MatFormFieldModule } from '@angular/material';
 // import { PaginateModule } from './paginate/paginate.module';
 
 @NgModule({
-	declarations: [AppComponent, FooterComponent, LoginComponent, AlertComponent, HeaderComponent, NotFoundComponent, RegisterComponent],
-	imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes), BrowserAnimationsModule],
+	declarations: [AppComponent,
+		FooterComponent,
+		LoginComponent, AlertComponent,
+		HeaderComponent, NotFoundComponent,
+		RegisterComponent,
+		ImageuploadComponent],
+	imports: [BrowserModule, HttpClientModule, ReactiveFormsModule,
+		MatFormFieldModule, MatInputModule, RouterModule.forRoot(appRoutes), BrowserAnimationsModule],
 	providers: [
 		AuthGuard,
 		AlertService,

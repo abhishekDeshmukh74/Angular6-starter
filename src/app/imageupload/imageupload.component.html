@@ -1,0 +1,16 @@
+<h2>Image Upload along with other form fields</h2>
+<form [formGroup]="uploadForm">
+
+	<mat-form-field>
+		<input matInput placeholder="Name" formControlName="name">
+	</mat-form-field>
+
+	<div class="img-upload">
+		<p>Upload an image</p>
+		<label for="fileInput">
+			<input type="file" id="fileInput" (change)="onFileChange($event)" #fileInput accept="image/*">
+			<span class="filename">{{fileName}}</span>
+		</label>
+	</div>
+</form>
+<button mat-button class="dialog-btn-primary" [disabled]="uploadForm.invalid" (click)="apicall()" cdkFocusInitial>Submit</button>
